@@ -5,7 +5,14 @@ require('./index.css');
 class App extends React.Component{
     render(){
         return(
-            <div>Yo Man!</div>
+            <div>
+                Yo Man!
+            </div>
         )
     }
 }
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
