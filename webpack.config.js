@@ -1,5 +1,5 @@
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');//create index html and put in dist
 
 module.exports = {
   entry: './app/index.js',
@@ -9,8 +9,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
-      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}
+      { test: /\.(js)$/, use: 'babel-loader' },//loder for babel env and script package
+      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]}//makes require index.css valid
     ]
   },
   plugins: [
