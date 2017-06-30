@@ -2,10 +2,18 @@ var React = require('react');
 
 class Popular extends React.Component{
   constructor(props) {
-    super();
+    super(); //always define for constructor
     this.state = {
-      selectedLanguage: 'All',
+      selectedLanguage: 'All', //auto select all
     };
+  }
+  updateLanguage(lang) {
+    this.setState(function () {
+      return {
+        selectedLanguage: lang, //select actual lang
+      }
+    });
+  }
     render(){
         var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']; 
         return(
