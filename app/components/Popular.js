@@ -23,7 +23,7 @@ class Popular extends React.Component{
                     return(
                     <li
                         style={lang === this.state.selectedLanguage ? {color: '#d0021b'} : null}
-                        onClick={this.updateLanguage.bind(null, lang)}
+                        onClick={this.updateLanguage.bind(null, lang)} //pass null for already passed,but 2nd arg will return new funtion for lang
                         key={lang}>
                         {lang}
                     </li>
