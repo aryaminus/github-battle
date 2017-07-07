@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = require('prop-types');// get proptypes
 
 class SelectLanguage extends React.Component{
   render(){
@@ -18,6 +19,11 @@ class SelectLanguage extends React.Component{
   }
 }
 
+SelectLanguage.propTypes = {
+  selectedLanguage: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
+};
+
 class Popular extends React.Component{
   constructor(props) {
     super(); //always define for constructor
@@ -36,6 +42,11 @@ class Popular extends React.Component{
     render(){
         var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']; 
         return(
+          <div>
+              <SelectLanguage
+                selectedLanguage={this.state.selectedLanguage}
+                onSelect={this.updateLanguage} />
+          </div>
         )
     }
 }
