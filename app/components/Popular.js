@@ -20,10 +20,6 @@ function SelectLanguage (props) { //props passed as this is undefined and can be
   )
 }
 
-RepoGrid.propTypes = {
-  repos: PropTypes.array.isRequired,
-}
-
 function RepoGrid (props) {
   return (
     <ul className='popular-list'> <!--//unordered list-->
@@ -48,6 +44,10 @@ function RepoGrid (props) {
       })}
     </ul>
   )
+}
+
+RepoGrid.propTypes = {
+  repos: PropTypes.array.isRequired,
 }
 
 SelectLanguage.propTypes = {
