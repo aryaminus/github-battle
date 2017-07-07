@@ -1,5 +1,11 @@
 var React = require('react');
 
+class SelectLanguage extends React.Component{
+  render(){
+
+  }
+}
+
 class Popular extends React.Component{
   constructor(props) {
     super(); //always define for constructor
