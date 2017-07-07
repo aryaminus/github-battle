@@ -2,24 +2,21 @@ var React = require('react');
 var PropTypes = require('prop-types');// get proptypes
 
 function SelectLanguage (props) { //props passed as this is undefined and can be named just props for stateless function component(as no state just props)
-
-}
-class SelectLanguage extends React.Component{
-  render(){
-    return(
+  var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+  return (
     <ul className='languages'>
-        {languages.map(function(lang){
-            return(
-            <li
-                style={lang === this.props.state.selectedLanguage ? {color: '#d0021b'} : null}
-                onClick={this.props.onSelect.bind(null, lang)} //pass null for already passed,but 2nd arg will return new funtion for lang
-                key={lang}>
-                {lang}
-            </li>
-            )
-        },this)}
+      {languages.map(function (lang) {
+        return (
+          <li
+            style={lang === props.selectedLanguage ? {color: '#d0021b'} : null}
+            onClick={props.onSelect.bind(null, lang)}
+            key={lang}>
+              {lang}
+          </li>
+        )
+      })}
     </ul>
-  }
+  )
 }
 
 SelectLanguage.propTypes = {
@@ -43,7 +40,7 @@ class Popular extends React.Component{
     });
   }
     render(){
-        var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']; 
+        //var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']; 
         return(
           <div>
               <SelectLanguage
