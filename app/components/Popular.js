@@ -2,7 +2,18 @@ var React = require('react');
 
 class SelectLanguage extends React.Component{
   render(){
-
+    <ul className='languages'>
+        {languages.map(function(lang){
+            return(
+            <li
+                style={lang === this.state.selectedLanguage ? {color: '#d0021b'} : null}
+                onClick={this.updateLanguage.bind(null, lang)} //pass null for already passed,but 2nd arg will return new funtion for lang
+                key={lang}>
+                {lang}
+            </li>
+            )
+        },this)}
+    </ul>
   }
 }
 
@@ -24,18 +35,6 @@ class Popular extends React.Component{
     render(){
         var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']; 
         return(
-            <ul className='languages'>
-                {languages.map(function(lang){
-                    return(
-                    <li
-                        style={lang === this.state.selectedLanguage ? {color: '#d0021b'} : null}
-                        onClick={this.updateLanguage.bind(null, lang)} //pass null for already passed,but 2nd arg will return new funtion for lang
-                        key={lang}>
-                        {lang}
-                    </li>
-                    )
-                },this)}
-            </ul>
         )
     }
 }
