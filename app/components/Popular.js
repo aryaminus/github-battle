@@ -34,12 +34,24 @@ class Popular extends React.Component{
     };
     this.updateLanguage = this.updateLanguage.bind(this); //bind will bound the updatelang to (this) any condition
   }
+  componentDidMount() { //life-cycle event i.e component show to screen
+    this.updateLanguage(this.state.selectedLanguage) //when clicked update-lang is envoked for selected lang
+  }
   updateLanguage(lang) {
     this.setState(function () { //only bound when updatelang invoked
       return {
         selectedLanguage: lang, //select actual lang
+        repos: null
       }
     });
+    api.fetchPopularRepos(lang) //ajax request
+      .then(function (repos) {
+        this.setState(function () {
+          return {
+            repos: repos //feedback repos
+          }
+        });
+      }.bind(this));
   }
     render(){
         //var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']; 
