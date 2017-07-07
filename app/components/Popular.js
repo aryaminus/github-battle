@@ -22,7 +22,7 @@ function SelectLanguage (props) { //props passed as this is undefined and can be
 
 function RepoGrid (props) {
   return (
-    <ul className='popular-list'> <!--//unordered list-->
+    <ul className='popular-list'>
       {props.repos.map(function (repo, index) {
         return (
           <li key={repo.name} className='popular-item'>
