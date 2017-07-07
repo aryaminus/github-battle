@@ -1,6 +1,9 @@
 var React = require('react');
 var PropTypes = require('prop-types');// get proptypes
 
+function SelectLanguage (props) { //props passed as this is undefined and can be named just props for stateless function component(as no state just props)
+
+}
 class SelectLanguage extends React.Component{
   render(){
     return(
