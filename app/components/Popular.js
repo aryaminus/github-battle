@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = require('prop-types');// get proptypes
+var api = require('../utils/api');
 
 function SelectLanguage (props) { //props passed as this is undefined and can be named just props for stateless function component(as no state just props)
   var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
@@ -29,6 +30,7 @@ class Popular extends React.Component{
     super(); //always define for constructor
     this.state = {
       selectedLanguage: 'All', //auto select all
+      repos: null,
     };
     this.updateLanguage = this.updateLanguage.bind(this); //bind will bound the updatelang to (this) any condition
   }
