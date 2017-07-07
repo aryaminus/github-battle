@@ -2,12 +2,13 @@ var React = require('react');
 
 class SelectLanguage extends React.Component{
   render(){
+    return(
     <ul className='languages'>
         {languages.map(function(lang){
             return(
             <li
-                style={lang === this.state.selectedLanguage ? {color: '#d0021b'} : null}
-                onClick={this.updateLanguage.bind(null, lang)} //pass null for already passed,but 2nd arg will return new funtion for lang
+                style={lang === this.props.state.selectedLanguage ? {color: '#d0021b'} : null}
+                onClick={this.props.onSelect.bind(null, lang)} //pass null for already passed,but 2nd arg will return new funtion for lang
                 key={lang}>
                 {lang}
             </li>
