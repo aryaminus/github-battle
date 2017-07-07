@@ -1,4 +1,4 @@
-var path = require('path');
+var path = require('path');//path setup
 var HtmlWebpackPlugin = require('html-webpack-plugin');//create index html and put in dist
 
 module.exports = {
