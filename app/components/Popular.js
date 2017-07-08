@@ -46,7 +46,7 @@ function RepoGrid (props) {
   )
 }
 
-RepoGrid.propTypes = {
+RepoGrid.propTypes = { //proptypes
   repos: PropTypes.array.isRequired,
 }
 
