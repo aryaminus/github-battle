@@ -11,4 +11,4 @@ class App extends React.Component{
     }
 }
 
-module.exports = App;//needed for validity of require in index
+module.exports = App;//needed for validity of require in index.html
