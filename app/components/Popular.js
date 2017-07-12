@@ -1,4 +1,4 @@
-var React = require('react');
+var React = require('react');//get react
 var PropTypes = require('prop-types');// get proptypes
 var api = require('../utils/api');
 
